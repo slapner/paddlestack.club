@@ -47,7 +47,7 @@ const SignupForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="flex space-x-1 justify-between">
+        <div className="flex space-x-4 justify-between">
           <FormField
             control={form.control}
             name="firstName"
@@ -75,7 +75,7 @@ const SignupForm = () => {
             )}
           />
         </div>
-        <div className="flex space-x-1 justify-between">
+        <div className="flex space-x-4 justify-between">
           <FormField
             control={form.control}
             name="password"
