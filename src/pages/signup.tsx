@@ -23,9 +23,6 @@ import { Link } from "react-router-dom";
 import { TypographyH2 } from "@/components/ui/typography";
 
 const formSchema = z.object({
-  firstName: z.string().min(2),
-  lastName: z.string().min(2),
-  avatar: z.any(),
   email: z.string().email(),
   password: z.string().min(6),
   confirmPassword: z.string().min(6),
@@ -47,62 +44,51 @@ const SignupForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="flex space-x-4 justify-between">
-          <FormField
-            control={form.control}
-            name="firstName"
-            render={({ field }) => (
-              <FormItem className="w-1/2">
-                <FormLabel>First name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Brian" required {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="lastName"
-            render={({ field }) => (
-              <FormItem className="w-1/2">
-                <FormLabel>Last name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Clapner" required {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-        <div className="flex space-x-4 justify-between">
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem className="w-1/2">
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input placeholder="password" type="password" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }) => (
-              <FormItem className="w-1/2">
-                <FormLabel>Confirm Password</FormLabel>
-                <FormControl>
-                  <Input placeholder="password" type="password" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>First name</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="pickleballer@gmail.com"
+                  required
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Password</FormLabel>
+              <FormControl>
+                <Input placeholder="password" type="password" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="confirmPassword"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Confirm Password</FormLabel>
+              <FormControl>
+                <Input placeholder="password" type="password" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <Button className="w-full" type="submit">
           Submit
         </Button>
@@ -113,7 +99,7 @@ const SignupForm = () => {
 
 export default function Signup() {
   return (
-    <Card className="w-[640px]">
+    <Card className="w-[400px]">
       <CardHeader>
         <CardTitle>
           <TypographyH2>Sign Up</TypographyH2>

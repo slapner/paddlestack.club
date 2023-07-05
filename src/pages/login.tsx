@@ -70,7 +70,7 @@ const LoginForm = () => {
           )}
         />
         <Button className="w-full" type="submit">
-          Submit
+          Login
         </Button>
       </form>
     </Form>
@@ -79,7 +79,7 @@ const LoginForm = () => {
 
 export default function Login() {
   return (
-    <Card className="w-[420px]">
+    <Card className="w-[400px]">
       <CardHeader>
         <CardTitle>
           <TypographyH2>Login</TypographyH2>
