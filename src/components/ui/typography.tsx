@@ -1,8 +1,4 @@
-import { FunctionComponent } from "react";
-
-interface PropsWithChildren {
-  children: React.ReactNode;
-}
+import { FunctionComponent, PropsWithChildren } from "react";
 
 export const TypographyH1: FunctionComponent<PropsWithChildren> = ({
   children,
